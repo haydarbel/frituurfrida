@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head(title='Sauzen')"></head>
+<body>
+<nav th:replace="fragments::menu"></nav>
+<h2>Van tot prijs</h2>
+<form th:object="${beginLetters}" method="get"
+      th:action="@{/snacks/beginnaam}">
+    <label>
+        beginletters:<input th:field="*{letters}" autofocus>
+        <span th:errors="*{letters}"></span>
+    </label>
+    <button>Zoeken</button>
+</form>
+<th:block th:if="${snacks}">
+    <ul></ul><li th:each="snack:${snacks}" th:text="${snack.naam}"></li></ul>
+</th:block>
+</body>
+</html>
