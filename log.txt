@@ -1456,3 +1456,6 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [begin
 2021-03-23 13:59:12.585 DEBUG 1002 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
 2021-03-23 13:59:12.585 DEBUG 1002 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,naam,prijs from snacks where naam like ? order by naam]
 2021-03-23 13:59:12.586 TRACE 1002 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [me%], value class [java.lang.String], SQL type unknown
+2021-03-23 14:41:02.672  INFO 1002 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-23 14:41:02.672  INFO 1002 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2021-03-23 14:41:02.676  INFO 1002 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
