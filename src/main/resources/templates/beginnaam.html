@@ -7,14 +7,21 @@
 <form th:object="${beginLetters}" method="get"
       th:action="@{/snacks/beginnaam}">
     <label>
-        beginletters:<input th:field="*{letters}" autofocus>
+        beginletters:<input th:field="*{letters}" autofocus type="text" required minlength="1">
         <span th:errors="*{letters}"></span>
 
     </label>
     <button>Zoeken</button>
 </form>
 <th:block th:if="${snacks}">
-    <ul></ul><li th:each="snack:${snacks}" th:text="${snack.naam}"></li></ul>
+    <h2>Snacks die beginnen met
+        <th:block th:text="|'${beginLetters.letters}'|"></th:block>
+    </h2>
+    <ul>
+        <li th:each="snack:${snacks}">
+            <a th:text="${snack.naam}" th:href="@{/snacks/{id}/wijzigen/form(id=${snack.id})}"></a>
+        </li>
+    </ul>
 </th:block>
 </body>
 </html>
